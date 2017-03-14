@@ -1,0 +1,17 @@
+@import './css/deverpham.scss';
+html,body {
+    @extend %reset;
+    font-family: 'Baloo Bhaina', cursive;
+}
+.header {
+    @include width(100);
+    @include background-image( linear-gradient(to left,#579CE2,#DF5452));
+    @extend %middle;
+    @extend %reset;
+    @extend %list;
+    .title {
+       font-size: 25px;
+       @extend %reset;
+       color :#fff;
+    }
+}

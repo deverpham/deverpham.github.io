@@ -1,0 +1,17 @@
+@import './stylesheets/_bourbon.scss';
+@mixin width($number) {
+    width:$number#{'%'};
+}
+%reset {
+    padding :0;
+    margin :0;
+}
+%middle {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+%list {
+    display:flex;
+    flex-direction:column;
+}
