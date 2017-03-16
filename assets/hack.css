@@ -1,4 +1,4 @@
-html, body, .main .header, .main .header .title, .main header middle .listMenu, .main header .content .info .listMenu, .main .content header .info .listMenu, .main .content .info *, .main .content .info .social .mainSocial .detail p {
+html, body, .main .header, .main .header .title, .main header middle .listMenu, .main header .content .info .listMenu, .main .content header .info .listMenu, .main .content .info *, .main .content .info .social .mainSocial .detail p, .main .content .activity .recentwork .work p, timeline field p {
   padding: 0;
   margin: 0; }
 
@@ -7,16 +7,20 @@ html, body, .main .header, .main .header .title, .main header middle .listMenu, 
   justify-content: center;
   align-items: center; }
 
-.main .header, .main .content .info, .main .content .info .contact {
+.main .header, .main .content .info, .main .content .info .contact, timeline field {
   display: flex;
   flex-direction: column; }
 
-.flex, .list, .main .content .info .social .mainSocial, .main .content .info .social .listSocial ul li, autofull {
+.flex, .main .content, .list, .main .content .info .social .mainSocial, .main .content .info .social .listSocial ul li, autofull {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  flex-wrap: wrap; }
 
 html, body {
   font-family: 'Roboto', sans-serif; }
+
+.flex, .main .content, .list {
+  flex-wrap: wrap; }
 
 .main {
   flex: 1;
@@ -37,11 +41,12 @@ html, body {
         list-style: none; }
   .main .content {
     padding: 50px;
-    background: #F1F5F6; }
+    background: #F1F5F6;
+    justify-content: space-between; }
     .main .content .info {
       line-height: 1.4;
       padding: 5px;
-      max-width: 400px;
+      width: 400px;
       background: #FFFFFF; }
       .main .content .info .avatar {
         max-width: 200px;
@@ -97,6 +102,46 @@ html, body {
                 color: #939393; }
               .main .content .info .social .listSocial ul li p {
                 margin-left: 10px; }
+    .main .content .activity {
+      background: #FFFFFF;
+      flex: 1;
+      margin-left: 20px;
+      padding: 20px 30px; }
+      .main .content .activity .recentwork {
+        line-height: 1.4; }
+        .main .content .activity .recentwork .title {
+          font-weight: 400;
+          color: #42B4CB;
+          text-transform: uppercase;
+          font-size: 20px; }
+          .main .content .activity .recentwork .title:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #F1F5F6; }
+        .main .content .activity .recentwork .work-feature {
+          max-width: 200px;
+          height: auto;
+          min-height: 150px; }
+        .main .content .activity .recentwork .wrapper {
+          justify-content: space-around; }
+        .main .content .activity .recentwork .work p.workDay {
+          font-size: 12px;
+          color: #939393; }
+      .main .content .activity .workExperience {
+        width: 50%; }
+        .main .content .activity .workExperience .title {
+          font-weight: 400;
+          color: #42B4CB;
+          text-transform: uppercase;
+          font-size: 20px; }
+          .main .content .activity .workExperience .title:after {
+            content: "";
+            display: block;
+            width: 90%;
+            height: 5px;
+            background: #F1F5F6; }
 
 .sidebar {
   width: 300px;
@@ -107,5 +152,38 @@ html, body {
 
 autofull {
   flex: 1; }
+
+timeline field {
+  border-left: 1px solid #CACDCE;
+  padding-left: 20px;
+  position: relative; }
+  timeline field dot {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    top: -10px;
+    left: -8.5px;
+    box-shadow: 1px 1px 9px 0px #ababab; }
+    timeline field dot:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: #42B4CB;
+      border-radius: 50%;
+      top: 3px;
+      left: 2.7px;
+      position: absolute; }
+  timeline field p {
+    margin-bottom: 5px; }
+    timeline field p.time {
+      margin-top: -12px;
+      color: #939393;
+      font-size: 13px; }
+    timeline field p.company {
+      margin-bottom: 50px; }
+  timeline field:last-child {
+    border: none; }
 
 /*# sourceMappingURL=hack.css.map */
