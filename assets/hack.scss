@@ -3,9 +3,15 @@ html,body {
     @extend %reset;
     font-family: 'Baloo Bhaina', cursive;
 }
-.header {
+.flex {
+    @extend %row;
+}
+.main {
+    flex:1;
+    width:70%;
+    .header {
     @include width(100);
-    @include background-image( linear-gradient(to left,#579CE2,#DF5452));
+    background:$mainBackgroundColor;
     @extend %middle;
     @extend %reset;
     @extend %list;
@@ -13,5 +19,79 @@ html,body {
        font-size: 25px;
        @extend %reset;
        color :#fff;
+        }
     }
+    header {
+        min-height:$headerHigh;
+        background :$headerBackground;
+        middle {
+            min-height:$headerHigh;
+            padding:0 30px;
+                .listMenu {
+                @extend %reset;
+                list-style:none;
+            }
+        }
+    }
+    .content  {
+        padding:50px;
+        background :$mainBackgroundColor;
+        .info {
+            line-height:1.4;
+            padding:5px;
+            @extend middle;
+            max-width:200px;
+            background :$infoBackgroundColor;
+            @extend %list;
+            .avatar {
+                max-width:200px;
+                height:auto;
+            }
+            * {
+                @extend %reset;
+            }
+            .title {
+                    color :$textHoverColor;
+                }
+            .profession {
+                color:$textUnimportantColor;
+            }
+            .contact {
+                @extend %list;
+                a {
+                    cursor:pointer;
+                    margin:5px 0;
+                    padding:10px;
+                    border-radius:50px;
+                    
+                    line-height:1.4;
+                    & p {
+                        margin-top:4px;
+                    }
+                    &.hideMe {
+                        
+                        background :$primaryButtonColor;
+                        color :$textPrimaryColor;
+                        text-align:center;
+                    }
+                    &.sendMessage {
+                        background :transparent;
+                        color :$textHoverColor;
+                        border:$textHoverColor 2px solid;
+                    }
+                }
+            }
+        }
+    }
+}
+.sidebar {
+    width:300px;
+    background: $sidebarBackgroundColor;
+}
+middle {
+    @extend %middle;
+}
+autofull {
+    @extend %row;
+    flex:1;
 }

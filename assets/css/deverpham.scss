@@ -1,4 +1,5 @@
 @import './stylesheets/_bourbon.scss';
+@import './variables.scss';
 @mixin width($number) {
     width:$number#{'%'};
 }
@@ -14,4 +15,8 @@
 %list {
     display:flex;
     flex-direction:column;
+}
+%row {
+    display :flex;
+    flex-direction:row;
 }
