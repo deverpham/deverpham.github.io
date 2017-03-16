@@ -1,8 +1,8 @@
-html, body, .main .header, .main .header .title, .main header middle .listMenu, .main header .content .info .listMenu, .main .content header .info .listMenu, .main .content .info * {
+html, body, .main .header, .main .header .title, .main header middle .listMenu, .main header .content .info .listMenu, .main .content header .info .listMenu, .main .content .info *, .main .content .info .social .mainSocial .detail p {
   padding: 0;
   margin: 0; }
 
-.main .header, middle, .main .content .info {
+.main .header, .main .content .info .social .mainSocial, middle, .main .content .info, .middle {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -11,12 +11,12 @@ html, body, .main .header, .main .header .title, .main header middle .listMenu, 
   display: flex;
   flex-direction: column; }
 
-.flex, autofull {
+.flex, .list, .main .content .info .social .mainSocial, autofull {
   display: flex;
   flex-direction: row; }
 
 html, body {
-  font-family: 'Baloo Bhaina', cursive; }
+  font-family: 'Roboto', sans-serif; }
 
 .main {
   flex: 1;
@@ -41,7 +41,7 @@ html, body {
     .main .content .info {
       line-height: 1.4;
       padding: 5px;
-      max-width: 200px;
+      max-width: 400px;
       background: #FFFFFF; }
       .main .content .info .avatar {
         max-width: 200px;
@@ -49,27 +49,50 @@ html, body {
       .main .content .info .title {
         color: #42B4CB; }
       .main .content .info .profession {
-        color: #4D595C; }
-      .main .content .info .contact a {
-        cursor: pointer;
-        margin: 5px 0;
-        padding: 10px;
-        border-radius: 50px;
-        line-height: 1.4; }
-        .main .content .info .contact a p {
-          margin-top: 4px; }
-        .main .content .info .contact a.hideMe {
-          background: #23BCD6;
-          color: #FFFFFF;
-          text-align: center; }
-        .main .content .info .contact a.sendMessage {
-          background: transparent;
-          color: #42B4CB;
-          border: #42B4CB 2px solid; }
+        color: #D7D8DA; }
+      .main .content .info .contact {
+        margin-top: 20px; }
+        .main .content .info .contact a {
+          margin: 5px 0;
+          cursor: pointer;
+          padding: 10px;
+          border-radius: 50px;
+          line-height: 1.4; }
+          .main .content .info .contact a.hireMe {
+            background: #23BCD6;
+            color: #FFFFFF;
+            text-align: center; }
+          .main .content .info .contact a.sendMessage {
+            padding: 7px 9px;
+            background: transparent;
+            color: #42B4CB;
+            border: #42B4CB 2px solid; }
+      .main .content .info .social {
+        margin-top: 20px;
+        width: 100%; }
+        .main .content .info .social .mainSocial {
+          padding: 0 30px;
+          justify-content: space-between; }
+          .main .content .info .social .mainSocial i {
+            color: #D7D8DA;
+            font-size: 25px; }
+          .main .content .info .social .mainSocial .detail {
+            cursor: pointer;
+            line-height: 1.2;
+            margin-left: 10px; }
+            .main .content .info .social .mainSocial .detail .socialName {
+              color: #D7D8DA;
+              font-size: 12px; }
+            .main .content .info .social .mainSocial .detail .socialValue {
+              color: #42B4CB;
+              font-size: 14px; }
 
 .sidebar {
   width: 300px;
   background: #3D4246; }
+
+.list {
+  flex-direction: column; }
 
 autofull {
   flex: 1; }

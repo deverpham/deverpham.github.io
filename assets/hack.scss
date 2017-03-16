@@ -1,7 +1,7 @@
 @import './css/deverpham.scss';
 html,body {
     @extend %reset;
-    font-family: 'Baloo Bhaina', cursive;
+   font-family: 'Roboto', sans-serif;
 }
 .flex {
     @extend %row;
@@ -37,10 +37,11 @@ html,body {
         padding:50px;
         background :$mainBackgroundColor;
         .info {
+            
             line-height:1.4;
             padding:5px;
             @extend middle;
-            max-width:200px;
+            max-width:400px;
             background :$infoBackgroundColor;
             @extend %list;
             .avatar {
@@ -57,30 +58,62 @@ html,body {
                 color:$textUnimportantColor;
             }
             .contact {
+                margin-top:20px;
                 @extend %list;
                 a {
+                     margin:5px 0;
                     cursor:pointer;
-                    margin:5px 0;
                     padding:10px;
                     border-radius:50px;
                     
                     line-height:1.4;
-                    & p {
-                        margin-top:4px;
-                    }
-                    &.hideMe {
-                        
+                    &.hireMe {
+                       
                         background :$primaryButtonColor;
                         color :$textPrimaryColor;
                         text-align:center;
                     }
                     &.sendMessage {
+                        padding:7px 9px;
                         background :transparent;
                         color :$textHoverColor;
                         border:$textHoverColor 2px solid;
                     }
                 }
             }
+            .social {
+                margin-top:20px;
+                width:100%;
+                .mainSocial {
+                    padding :0 30px;
+                    @extend %middle;
+                    @extend %row;
+                    justify-content:space-between;
+                    i {
+                        color:$textUnimportantColor;
+                        font-size:25px;
+                    }
+                    .detail {
+                        cursor:pointer;
+                        line-height:1.2;
+                        margin-left:10px;
+                        .socialName {
+                            color:$textUnimportantColor;
+                            font-size:12px;
+                        }
+                        p {
+                            @extend  %reset;
+                    
+                    
+                        }
+                        .socialValue {
+                            color:$textHoverColor;
+                            font-size:14px;
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
@@ -90,6 +123,13 @@ html,body {
 }
 middle {
     @extend %middle;
+}
+.middle {
+    @extend %middle;
+}
+.list {
+    @extend .flex;
+    flex-direction:column;
 }
 autofull {
     @extend %row;

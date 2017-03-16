@@ -25,14 +25,16 @@ class Info extends React.Component {
                 </h3>
                 <h5 className='profession'>Full Stack Developer</h5>
                 <div className='contact'>
-                     <a className='hideMe'>
-                    <p>Hide Me</p>
+                     <a className='hireMe'>
+                    <p>Hire Me</p>
                 </a>
                 <a className='sendMessage'>
                     <p>Send Message</p>
                 </a>
                 </div>
+                <Social />
             </section>
+           
             )
     }
 }
@@ -44,7 +46,36 @@ class Sidebar extends React.Component  {
             )
     }
 }
-
+class Social extends React.Component {
+    render() {
+        return (
+            <section className='social'>
+                <div className='mainSocial'>
+                    <div className='middle thinh skype flex'>
+                        <i className="fa fa-skype" aria-hidden="true"></i>
+                        <div className='detail list'>
+                            <p className='socialName'>
+                            Skype:
+                            </p>
+                            <p className='socialValue'>Deverpham</p>
+                        </div>
+                    </div>
+                    <div className='middle thinh linkedin flex'>
+                        <i className="fa fa-linkedin" aria-hidden="true"></i>
+                        <div className='detail list'>
+                            <p className='socialName'>
+                                Linkedin:
+                            </p>
+                            <p className='socialValue'>Deverpham</p>
+                        </div>                    
+                    </div>
+                </div>
+                <div className='listSocial'>
+                </div>
+            </section>
+            )
+    }
+}
 class Header extends React.Component {
     render() {
         return  (
