@@ -71,6 +71,26 @@ class Social extends React.Component {
                     </div>
                 </div>
                 <div className='listSocial'>
+                    <ul>
+                        <li>
+                            <i className="fa fa-facebook" aria-hidden="true"></i>
+                            <p>
+                                facebook.com/deverpham
+                            </p>
+                        </li>
+                        <li>
+                            <i className="fa fa-inbox" aria-hidden="true"></i>
+                            <p>
+                                deverpham@gmail.com
+                            </p>
+                        </li>
+                        <li>
+                            <i className="fa fa-twitter" aria-hidden="true"></i>
+                            <p>
+                                twitter.com/deverpham
+                            </p>
+                        </li>
+                    </ul>
                 </div>
             </section>
             )

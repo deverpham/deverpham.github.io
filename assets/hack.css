@@ -11,7 +11,7 @@ html, body, .main .header, .main .header .title, .main header middle .listMenu, 
   display: flex;
   flex-direction: column; }
 
-.flex, .list, .main .content .info .social .mainSocial, autofull {
+.flex, .list, .main .content .info .social .mainSocial, .main .content .info .social .listSocial ul li, autofull {
   display: flex;
   flex-direction: row; }
 
@@ -49,7 +49,7 @@ html, body {
       .main .content .info .title {
         color: #42B4CB; }
       .main .content .info .profession {
-        color: #D7D8DA; }
+        color: #939393; }
       .main .content .info .contact {
         margin-top: 20px; }
         .main .content .info .contact a {
@@ -74,18 +74,29 @@ html, body {
           padding: 0 30px;
           justify-content: space-between; }
           .main .content .info .social .mainSocial i {
-            color: #D7D8DA;
+            color: #939393;
             font-size: 25px; }
           .main .content .info .social .mainSocial .detail {
             cursor: pointer;
             line-height: 1.2;
             margin-left: 10px; }
             .main .content .info .social .mainSocial .detail .socialName {
-              color: #D7D8DA;
+              color: #939393;
               font-size: 12px; }
             .main .content .info .social .mainSocial .detail .socialValue {
               color: #42B4CB;
               font-size: 14px; }
+        .main .content .info .social .listSocial {
+          margin-top: 20px;
+          padding: 0 30px; }
+          .main .content .info .social .listSocial ul {
+            list-style: none; }
+            .main .content .info .social .listSocial ul li {
+              align-items: center; }
+              .main .content .info .social .listSocial ul li p, .main .content .info .social .listSocial ul li i {
+                color: #939393; }
+              .main .content .info .social .listSocial ul li p {
+                margin-left: 10px; }
 
 .sidebar {
   width: 300px;

@@ -82,6 +82,7 @@ html,body {
                 }
             }
             .social {
+                
                 margin-top:20px;
                 width:100%;
                 .mainSocial {
@@ -109,6 +110,23 @@ html,body {
                         .socialValue {
                             color:$textHoverColor;
                             font-size:14px;
+                        }
+                    }
+                }
+                .listSocial {
+                    margin-top:20px;
+                    padding :0 30px;
+                    ul {
+                        list-style:none;
+                        li {
+                            @extend %row;
+                            align-items:center;
+                            p,i {
+                                color:$textUnimportantColor;
+                            }
+                            p {
+                                margin-left:10px;
+                            }
                         }
                     }
                 }
