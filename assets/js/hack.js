@@ -17,6 +17,9 @@
 }
 
 class Info extends React.Component {
+    openMessageDialog()   {
+        document.querySelector('.agilecrm').className+=' agilecrm-show';
+    }
     render() {
         return (
             <section className='info'>
@@ -29,7 +32,7 @@ class Info extends React.Component {
                      <a className='hireMe'>
                     <p>Hire Me</p>
                 </a>
-                <a className='sendMessage'>
+                <a className='sendMessage' onClick={this.openMessageDialog}>
                     <p>Send Message</p>
                 </a>
                 </div>
@@ -307,3 +310,20 @@ const content = (
   content,
   document.getElementById('deverpham')
 );
+$(document).ready(function() {
+    $('.content-chat').perfectScrollbar();
+    $('.icons-list-button').click(function() {
+        $('.icons-list').toggleClass('show');
+        $(this).toggleClass('show');
+    })
+    $('.show-chatalert-button').click(function() {
+        $('.chatDialog-alert').toggleClass('show');
+    })
+    $('#agilecrm-button-chat').click(function() {
+        $('.agilecrm').toggleClass('agilecrm-show');
+            $(this).find('i').each(function() {
+              $(this).toggleClass('fa-close');
+              $(this).toggleClass('fa-cloud')
+           })
+    })
+})
