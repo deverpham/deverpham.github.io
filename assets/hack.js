@@ -43,7 +43,63 @@ class Sidebar extends React.Component  {
     render() {
         return (
             <section className='sidebar'>
+            <input className='searchInput' />
+            <Skills />
             </section>
+            )
+    }
+}
+class Skills extends React.Component {
+    render() {
+        return (
+            <section className='skillsArea'>
+                <div className='skills'>
+                    <h3 className='title'>Front-End Skills</h3>
+                    <div className='skill'>
+                        <p className='title-child'>HTML5</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>                 
+                    <div className='skill'>
+                        <p className='title-child'>CSS3</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>                
+                    <div className='skill'>
+                        <p className='title-child'>JS</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>               
+                <div className='skills'>
+                    <h3 className='title'>Back-End Skills</h3>
+                    <div className='skill'>
+                        <p className='title-child'>HTML5</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>                 
+                    <div className='skill'>
+                        <p className='title-child'>CSS3</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>                
+                    <div className='skill'>
+                        <p className='title-child'>JS</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>              
+                <div className='skills'>
+                    <h3 className='title'>Front-End Skills</h3>
+                    <div className='skill'>
+                        <p className='title-child'>HTML5</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>                 
+                    <div className='skill'>
+                        <p className='title-child'>CSS3</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>                
+                    <div className='skill'>
+                        <p className='title-child'>JS</p>
+                        <i className="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </section>
+            
             )
     }
 }
