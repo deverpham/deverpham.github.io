@@ -18,7 +18,7 @@
 
 class Info extends React.Component {
     openMessageDialog()   {
-        document.querySelector('.agilecrm').className+=' agilecrm-show';
+        document.querySelector('#chatDialog-inchatting-agilecrm-s2').className+=' chatboxShow';
     }
     render() {
         return (
@@ -317,7 +317,7 @@ $(document).ready(function() {
         $(this).toggleClass('show');
     })
     $('.show-chatalert-button').click(function() {
-        $('.chatDialog-alert').toggleClass('show');
+        $('#chatDialog-inchatting-agilecrm-s2').toggleClass('chatboxShow');
     })
     $('#agilecrm-button-chat').click(function() {
         $('.agilecrm').toggleClass('agilecrm-show');

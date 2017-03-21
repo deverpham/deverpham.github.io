@@ -24,6 +24,8 @@ html, body {
   flex-wrap: wrap; }
 
 .main {
+  height: 100vh;
+  overflow: auto;
   background: #F1F5F6;
   flex: 1;
   width: 70%; }
@@ -33,6 +35,8 @@ html, body {
       font-size: 25px;
       color: #fff; }
   .main header {
+    position: fixed;
+    width: 75%;
     min-height: 70px;
     background: #FFFFFF; }
     .main header middle, .main header .content .info, .main .content header .info {
@@ -41,6 +45,7 @@ html, body {
       .main header middle .listMenu, .main header .content .info .listMenu, .main .content header .info .listMenu {
         list-style: none; }
   .main .content {
+    margin-top: 70px;
     padding: 50px;
     background: #F1F5F6;
     justify-content: space-between; }
@@ -222,5 +227,10 @@ timeline field {
       margin-bottom: 50px; }
   timeline field:last-child {
     border: none; }
+
+#chatDialog-inchatting-agilecrm-s2 {
+  display: none; }
+  #chatDialog-inchatting-agilecrm-s2.chatboxShow {
+    display: flex; }
 
 /*# sourceMappingURL=hack.css.map */
