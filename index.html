@@ -5,140 +5,18 @@
         <link rel="stylesheet" href="./assets/css/chat.css" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/css/perfect-scrollbar.min.css" type="text/css" />
-           <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet"> 
-                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet"> 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/js/perfect-scrollbar.jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
         <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
         <script type="text/babel" src=" ./assets/hack.js"></script>
         <title>console.log('Hello World')</title>
     </head>
     <body>
         <div id='deverpham'>
-            
-        </div>
-        <div id='chatDialog-inchatting-agilecrm-s2' class='shadow get-option' style= "">
-          <div class='chatdialog-content list '>
-              <div class='header-chat inline f-middle'>
-                  <div class=' user-info inline f-middle between w100'>
-                      <div class='w70 inline middle user-contact'>
-                          <div>
-                              <img class='user-avatar img-auto' src="./assets/images/avatar.jpg">
-                              </img>
-                          </div>
-                          <div class='user-name'>
-                              <p>Dever Pham</p>
-                          </div>
-                      </div>
-                      <div class='w30 inline feature-icon'>
-                          <a href='#'><i class="show-chatalert-button fa fa-close" aria-hidden="true"></i></a>
-                      </div>
-                  </div>
-              </div>
-              <div class='content-chat-wrapper  list '>
-                  <div class='content-chat  overgrid'>
-                      <div class='you-message '>
-                          <div class='message'>
-                              <p>Hello Viet Nam  <i class="icon-chat icons-list-button fa fa-smile-o icon-in-message" aria-hidden="true"></i></p>
-                              
-                          </div>
-                              
-                          
-                      </div>
-                      <div class='you-message '>
-                          <div class='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                              <small class='time-ago text-end'>2 mins ago<i class="fa fa-check seen" aria-hidden="true"></i></small>
-                          </div>
-                      </div>
-                      <div class='yourf-message '>
-                          <div class='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                              <small class='time-ago text-end'>2 mins ago</small>
-                              
-                          </div>
-                      </div>
-                      <div class='yourf-message '>
-                          <div class='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                      <div class='you-message '>
-                          <div class='message'>
-                              <p>Hello Viet Nam</p>
-                          </div>
-                      </div>
-                      <div class='yourf-message '>
-                          <div class='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                      <div class='you-message '>
-                          <div class='message'>
-                              <p>Hello Viet Nam</p>
-                          </div>
-                      </div>
-                      <div class='yourf-message '>
-                          <div class='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                      <div class='you-message '>
-                          <div class='message'>
-                              <p>Hello Viet Nam</p>
-                          </div>
-                      </div>
-                      <div class='yourf-message '>
-                          <div class='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                      <div class='you-message '>
-                          <div class='message'>
-                              <p>Hello Viet Nam</p>
-                          </div>
-                      </div>
-                      <div class='yourf-message '>
-                          <div class='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class='chat-footer list'>
-                    <div class=' inline msg-input'>
-                        <form class=' inline between middle w100'>
-                            <input  class='w80' type="text"  placeholder="Write your query here" name=""/>
-                            <a class='submit-msg inline f-middle w20' href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        </form>
-                    </div>
-                    <div class='footer-base-icon inline middle between'>
-                        <div class='base-button-tool inline  middle '>
-                            <i class="icon-chat fa fa-thumbs-up" aria-hidden="true"></i>
-                            <i class="icon-chat fa fa-thumbs-down" aria-hidden="true"></i>
-                            <i class="icon-chat icons-list-button fa fa-smile-o" aria-hidden="true"></i>
-                        </div>
-                        <div class='inline w50 at-end'>
-                            <small class ='tex-end Aglie-logogan'>We <i class="fa fa-heart icon-heart" aria-hidden="true"></i> Open Source</small>
-                        </div>
-                    </div>
-                    <div class='free-grid icons-wrapper'>
-                        <div class='inline between icons-list'>
-                            <img src="./assets/images/icons/icon-1.png" class='icon-img img-auto'></img>
-                            <img src="./assets/images/icons/icon-2.png" class='icon-img img-auto'></img>
-                            <img src="./assets/images/icons/icon-3.png" class='icon-img img-auto'></img>
-                            <img src="./assets/images/icons/icon-4.png" class='icon-img img-auto'></img>
-                            <img src="./assets/images/icons/icon-5.png" class='icon-img img-auto'></img>
-                        </div>
-                    </div>
-                  </div>
-              </div>
-              <div>
-                  
-              </div>
-          </div>
-
         </div>
     </body>
 </html>

@@ -1,5 +1,177 @@
- class Main extends React.Component {
-   
+class Chat extends React.Component {
+    guid() {
+      function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+      }
+      return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+    }
+    constructor(props) {
+        super(props);
+        var id =this.guid();
+        this.state = {
+            chatId : id
+        }
+        props.database.ref('/chat/' +id)
+            .on('value',(val)=> {
+                console.log(val)
+            })
+    }
+    sendMessage() {
+        
+        this.props.database.ref('/chat/' +this.state.chatId + "/"  +this.guid()).set( {
+            sender :'you',
+            message:this.state.message
+        })
+    }
+    setMessage(e) {
+        this.setState( {
+            message : e.target.value
+        })
+    }
+    render() {
+        return (
+            
+        <div id='chatDialog-inchatting-agilecrm-s2' className='shadow get-option'>
+          <div className='chatdialog-content list '>
+              <div className='header-chat inline f-middle'>
+                  <div className=' user-info inline f-middle between w100'>
+                      <div className='w70 inline middle user-contact'>
+                          <div>
+                              <img className='user-avatar img-auto' src="./assets/images/avatar.jpg">
+                              </img>
+                          </div>
+                          <div className='user-name'>
+                              <p>Dever Pham</p>
+                          </div>
+                      </div>
+                      <div className='w30 inline feature-icon'>
+                          <a href='#'><i className="show-chatalert-button fa fa-close" aria-hidden="true"></i></a>
+                      </div>
+                  </div>
+              </div>
+              <div className='content-chat-wrapper  list '>
+                  <div className='content-chat  overgrid'>
+                      <div className='you-message '>
+                          <div className='message'>
+                              <p>Hello Viet Nam  <i className="icon-chat icons-list-button fa fa-smile-o icon-in-message" aria-hidden="true"></i></p>
+                              
+                          </div>
+                              
+                          
+                      </div>
+                      <div className='you-message '>
+                          <div className='message'>
+                              <p>Xinh Tuoi No Ho</p>
+                              <small className='time-ago text-end'>2 mins ago<i className="fa fa-check seen" aria-hidden="true"></i></small>
+                          </div>
+                      </div>
+                      <div className='yourf-message '>
+                          <div className='message'>
+                              <p>Xinh Tuoi No Ho</p>
+                              <small className='time-ago text-end'>2 mins ago</small>
+                              
+                          </div>
+                      </div>
+                      <div className='yourf-message '>
+                          <div className='message'>
+                              <p>Xinh Tuoi No Ho</p>
+                          </div>
+                      </div>
+                      <div className='you-message '>
+                          <div className='message'>
+                              <p>Hello Viet Nam</p>
+                          </div>
+                      </div>
+                      <div className='yourf-message '>
+                          <div className='message'>
+                              <p>Xinh Tuoi No Ho</p>
+                          </div>
+                      </div>
+                      <div className='you-message '>
+                          <div className='message'>
+                              <p>Hello Viet Nam</p>
+                          </div>
+                      </div>
+                      <div className='yourf-message '>
+                          <div className='message'>
+                              <p>Xinh Tuoi No Ho</p>
+                          </div>
+                      </div>
+                      <div className='you-message '>
+                          <div className='message'>
+                              <p>Hello Viet Nam</p>
+                          </div>
+                      </div>
+                      <div className='yourf-message '>
+                          <div className='message'>
+                              <p>Xinh Tuoi No Ho</p>
+                          </div>
+                      </div>
+                      <div className='you-message '>
+                          <div className='message'>
+                              <p>Hello Viet Nam</p>
+                          </div>
+                      </div>
+                      <div className='yourf-message '>
+                          <div className='message'>
+                              <p>Xinh Tuoi No Ho</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div className='chat-footer list'>
+                    <div className=' inline msg-input'>
+                        <form className=' inline between middle w100'>
+                            <input onChange={this.setMessage.bind(this)} className='w80' type="text"  placeholder="Write your query here" name=""/>
+                            <a  onClick={this.sendMessage.bind(this)} className='submit-msg inline f-middle w20' href="#"><i className="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </form>
+                    </div>
+                    <div className='footer-base-icon inline middle between'>
+                        <div className='base-button-tool inline  middle '>
+                            <i className="icon-chat fa fa-thumbs-up" aria-hidden="true"></i>
+                            <i className="icon-chat fa fa-thumbs-down" aria-hidden="true"></i>
+                            <i className="icon-chat icons-list-button fa fa-smile-o" aria-hidden="true"></i>
+                        </div>
+                        <div className='inline w50 at-end'>
+                            <small className ='tex-end Aglie-logogan'>We <i className="fa fa-heart icon-heart" aria-hidden="true"></i> Open Source</small>
+                        </div>
+                    </div>
+                    <div className='free-grid icons-wrapper'>
+                        <div className='inline between icons-list'>
+                            <img src="./assets/images/icons/icon-1.png" className='icon-img img-auto'></img>
+                            <img src="./assets/images/icons/icon-2.png" className='icon-img img-auto'></img>
+                            <img src="./assets/images/icons/icon-3.png" className='icon-img img-auto'></img>
+                            <img src="./assets/images/icons/icon-4.png" className='icon-img img-auto'></img>
+                            <img src="./assets/images/icons/icon-5.png" className='icon-img img-auto'></img>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+              <div>
+                  
+              </div>
+          </div>
+          )
+    }
+}
+class Main extends React.Component {
+    constructor()  {
+        super()
+      var config = {
+        apiKey: "AIzaSyCfTxmZIdoak6t06flWKwQZ3vvsSf8BUVU",
+        authDomain: "deverpham-b0814.firebaseapp.com",
+        databaseURL: "https://deverpham-b0814.firebaseio.com",
+        storageBucket: "deverpham-b0814.appspot.com",
+        messagingSenderId: "627002789041"
+      };
+     var app= firebase.initializeApp(config);
+     this.state = {
+         db : app.database()
+     }
+    }
     render() {
       return (
         <section className='main'>
@@ -8,6 +180,7 @@
               <p className='title'> dever.stringJoin('developer','Pham')</p>
             </Header>
             <div className='content flex'>
+                <Chat database ={this.state.db } />
                 <Info />
                 <Activity />
             </div>
