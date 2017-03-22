@@ -93,7 +93,7 @@ clearInterval(timer)
               </div>
               <div className='chat-footer list'>
                     <div className=' inline msg-input'>
-                        <form className=' inline between middle w100' noValidate onSubmit={this.sendMessage.bind(this)}>
+                        <form action='#' className=' inline between middle w100' noValidate onSubmit={this.sendMessage.bind(this)}>
                             <input onChange={this.setMessage.bind(this)} className='w80' type="text"  placeholder="Write your query here" name=""/>
                             <a  onClick={this.sendMessage.bind(this)} className='submit-msg inline f-middle w20' href="#"><i className="fa fa-angle-right" aria-hidden="true"></i></a>
                         </form>
