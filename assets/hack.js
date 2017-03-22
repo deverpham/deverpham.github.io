@@ -68,7 +68,7 @@ clearInterval(timer)
               </div>
               <div className='content-chat-wrapper  list '>
                   <div className='content-chat  overgrid'>
-                      <div className='you-message '>
+                      <div className='yourf-message '>
                           <div className='message'>
                               <p>Hello guys,I'm Thinh nice to meet you! <i className="icon-chat icons-list-button fa fa-smile-o icon-in-message" aria-hidden="true"></i></p>
                               
