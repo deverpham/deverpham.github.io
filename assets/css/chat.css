@@ -985,7 +985,7 @@ a {
   #chatDialog-inchatting-agilecrm .chatdialog-content .content-chat-wrapper, #chatDialog-inchatting-agilecrm-s2 .chatdialog-content .content-chat-wrapper {
     background-image: url(http://thinhphatbentre.com/uploads/2012/05/Background_6.jpg);
     background-size: cover;
-    padding-bottom: 10px; }
+     }
     @media (max-width: 400px) {
       #chatDialog-inchatting-agilecrm .chatdialog-content .content-chat-wrapper, #chatDialog-inchatting-agilecrm-s2 .chatdialog-content .content-chat-wrapper {
         padding-right: 0; } }
@@ -993,7 +993,6 @@ a {
     position: relative;
     flex-wrap: nowrap;
     overflow: hidden;
-    padding: 20px;
     max-height: 300px;
     background: transparent; }
     #chatDialog-inchatting-agilecrm .chatdialog-content .content-chat .you-message + .you-message, #chatDialog-inchatting-agilecrm-s2 .chatdialog-content .content-chat .you-message + .you-message {
@@ -1238,5 +1237,7 @@ a {
   top: 0; }
 #chatDialog-inchatting-agilecrm-s2 .yourf-message .message p {
   margin-left: 18px; }
-
+.chatdialog-content.list  {
+  min-width:385px !important;
+}
 /*# sourceMappingURL=style.css.map */

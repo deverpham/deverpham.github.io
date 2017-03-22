@@ -12,26 +12,40 @@ class Chat extends React.Component {
         super(props);
         var id =this.guid();
         this.state = {
-            chatId : id
+            chatId : id,
+            historyChat: []
         }
         props.database.ref('/chat/' +id)
-            .on('value',(val)=> {
-                console.log(val)
+            .on('child_added',(val)=> {
+                         this.state.historyChat.push(val.val())
+        var middleman= this.state.historyChat
+        this.setState({
+                historyChat :middleman
+            })
+                   var timer =setInterval(function() {
+          $('.content-chat').scrollTop(10000) 
+       },0)
+       setTimeout(function() {
+clearInterval(timer)
+       },10)
             })
     }
     sendMessage() {
-        
         this.props.database.ref('/chat/' +this.state.chatId + "/"  +this.guid()).set( {
             sender :'you',
             message:this.state.message
         })
+        $('.chat-footer input').val('')
+       return false;
     }
     setMessage(e) {
         this.setState( {
-            message : e.target.value
+            message : e.target.value,
+            handleInput:e
         })
     }
     render() {
+        
         return (
             
         <div id='chatDialog-inchatting-agilecrm-s2' className='shadow get-option'>
@@ -56,75 +70,30 @@ class Chat extends React.Component {
                   <div className='content-chat  overgrid'>
                       <div className='you-message '>
                           <div className='message'>
-                              <p>Hello Viet Nam  <i className="icon-chat icons-list-button fa fa-smile-o icon-in-message" aria-hidden="true"></i></p>
+                              <p>Hello guys,I'm Thinh nice to meet you! <i className="icon-chat icons-list-button fa fa-smile-o icon-in-message" aria-hidden="true"></i></p>
                               
                           </div>
                               
                           
                       </div>
-                      <div className='you-message '>
+                      
+                      {this.state.historyChat.map((chat,i) => {
+                          return (
+                    <div key={i} className={chat.sender=='you' ? 'you-message ' : 'yourf-message'}>
                           <div className='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                              <small className='time-ago text-end'>2 mins ago<i className="fa fa-check seen" aria-hidden="true"></i></small>
+                              <p>{chat.message}</p>
                           </div>
                       </div>
-                      <div className='yourf-message '>
-                          <div className='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                              <small className='time-ago text-end'>2 mins ago</small>
-                              
-                          </div>
-                      </div>
-                      <div className='yourf-message '>
-                          <div className='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                      <div className='you-message '>
-                          <div className='message'>
-                              <p>Hello Viet Nam</p>
-                          </div>
-                      </div>
-                      <div className='yourf-message '>
-                          <div className='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                      <div className='you-message '>
-                          <div className='message'>
-                              <p>Hello Viet Nam</p>
-                          </div>
-                      </div>
-                      <div className='yourf-message '>
-                          <div className='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                      <div className='you-message '>
-                          <div className='message'>
-                              <p>Hello Viet Nam</p>
-                          </div>
-                      </div>
-                      <div className='yourf-message '>
-                          <div className='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
-                      <div className='you-message '>
-                          <div className='message'>
-                              <p>Hello Viet Nam</p>
-                          </div>
-                      </div>
-                      <div className='yourf-message '>
-                          <div className='message'>
-                              <p>Xinh Tuoi No Ho</p>
-                          </div>
-                      </div>
+                          )
+                      })
+                          
+                          
+                      }
                   </div>
               </div>
               <div className='chat-footer list'>
                     <div className=' inline msg-input'>
-                        <form className=' inline between middle w100'>
+                        <form className=' inline between middle w100' noValidate onSubmit={this.sendMessage.bind(this)}>
                             <input onChange={this.setMessage.bind(this)} className='w80' type="text"  placeholder="Write your query here" name=""/>
                             <a  onClick={this.sendMessage.bind(this)} className='submit-msg inline f-middle w20' href="#"><i className="fa fa-angle-right" aria-hidden="true"></i></a>
                         </form>
