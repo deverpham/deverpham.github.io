@@ -1,2 +1,0 @@
-# deverpham.github.io
-myBlog
